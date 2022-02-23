@@ -1,0 +1,15 @@
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.csproj.AssemblyReference.cache
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.GeneratedMSBuildEditorConfig.editorconfig
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.AssemblyInfoInputs.cache
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.AssemblyInfo.cs
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.csproj.CoreCompileInputs.cache
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/bin/Debug/net6.0/ToDoProject
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/bin/Debug/net6.0/ToDoProject.deps.json
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/bin/Debug/net6.0/ToDoProject.runtimeconfig.json
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/bin/Debug/net6.0/ToDoProject.dll
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/bin/Debug/net6.0/ref/ToDoProject.dll
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/bin/Debug/net6.0/ToDoProject.pdb
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.dll
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ref/ToDoProject.dll
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.pdb
+/Users/umitpasahz/Desktop/Ümit/Yazılım/Patika/ToDoProject/obj/Debug/net6.0/ToDoProject.genruntimeconfig.cache
