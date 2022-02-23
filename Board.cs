@@ -46,7 +46,9 @@ namespace ToDoProject
         public void BoardListele()
         {
             Console.WriteLine("*******************************************");
-            Console.WriteLine("**********-Yapılacaklar Listesi-***********");
+            Console.WriteLine("***************-Listeler-******************");
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("**************-TODO LINE-******************");
             Console.WriteLine("*******************************************");
             foreach (var Card in TODO)
             {
@@ -56,6 +58,80 @@ namespace ToDoProject
                 Console.WriteLine("Büyüklük    :{0}",Card.Boyut);
                 Console.WriteLine("*******************************************");
             }
+            Console.WriteLine("*************-IN PROGRESS LINE-************");
+            Console.WriteLine("*******************************************");
+            foreach (var Card in INPROGRESS)
+            {
+                Console.WriteLine("Başlık      :{0}",Card.Baslik);
+                Console.WriteLine("İçerik      :{0}",Card.Icerik);
+                Console.WriteLine("Atanan Kişi :{0}",Card.AtananId);
+                Console.WriteLine("Büyüklük    :{0}",Card.Boyut);
+                Console.WriteLine("*******************************************");
+            }
+            Console.WriteLine("***************-DONE LINE-*****************");
+            Console.WriteLine("*******************************************");
+            foreach (var Card in DONE)
+            {
+                Console.WriteLine("Başlık      :{0}",Card.Baslik);
+                Console.WriteLine("İçerik      :{0}",Card.Icerik);
+                Console.WriteLine("Atanan Kişi :{0}",Card.AtananId);
+                Console.WriteLine("Büyüklük    :{0}",Card.Boyut);
+                Console.WriteLine("*******************************************");
+            }
+        }
+        public void KisiListele()
+        {
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("***************-Kişiler-******************");
+            Console.WriteLine("*******************************************");
+            foreach (var item in kisiler)
+            {
+                Console.WriteLine("ID: {0}",item.Key);
+                Console.WriteLine("Ad Soyad: {0}",item.Value);
+                Console.WriteLine("*******************************************");
+            }
+
+        }
+        public void KartEkle()
+        {
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("*************-Kart Ekleme-*****************");
+            Console.WriteLine("*******************************************");
+            string baslik = StringControl("Başlık Giriniz: ");
+            string icerik = StringControl("İçerik Giriniz: ");
+            Console.Write("Büyüklük Seçiniz -> XS(1),S(2),M(3),L(4),XL(5): ");
+            int buyukluk = int.Parse(Console.ReadLine());
+            Console.Write("Kişi Id giriniz: ");
+            int kisi = int.Parse(Console.ReadLine());
+            if (kisiler.ContainsKey(kisi) & buyukluk == 1 )
+            {
+                TODO.Add(new Card(baslik,icerik,kisiler[kisi],Card.Buyukluk.XS));
+                Console.WriteLine("Board Kaydedilmiştir.");
+            } 
+            else if (kisiler.ContainsKey(kisi) & buyukluk == 2 )
+            {
+                TODO.Add(new Card(baslik,icerik,kisiler[kisi],Card.Buyukluk.S));
+                Console.WriteLine("Board Kaydedilmiştir.");
+            }
+            else if (kisiler.ContainsKey(kisi) & buyukluk == 3 )
+            {
+                TODO.Add(new Card(baslik,icerik,kisiler[kisi],Card.Buyukluk.M));
+                Console.WriteLine("Board Kaydedilmiştir.");
+            }
+            else if (kisiler.ContainsKey(kisi) & buyukluk == 4 )
+            {
+                TODO.Add(new Card(baslik,icerik,kisiler[kisi],Card.Buyukluk.L));
+                Console.WriteLine("Board Kaydedilmiştir.");
+            }
+            else if (kisiler.ContainsKey(kisi) & buyukluk == 5 )
+            {
+                TODO.Add(new Card(baslik,icerik,kisiler[kisi],Card.Buyukluk.XL));
+                Console.WriteLine("Board Kaydedilmiştir.");
+            } else
+            {
+                 Console.WriteLine("Hatalı veya eksik tuşladınız.");
+            }
+
         }
         public string StringControl(string text)
         {
@@ -93,6 +169,7 @@ namespace ToDoProject
             }
             return veri;
         }
+        
     }
 }
 

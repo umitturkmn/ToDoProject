@@ -15,7 +15,7 @@ namespace ToDoProject
 
         public enum Buyukluk
         {
-            XS,
+            XS=1,
             S,
             M,
             L,

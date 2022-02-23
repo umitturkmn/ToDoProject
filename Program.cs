@@ -21,6 +21,7 @@ namespace ToDoProject
             Console.WriteLine("(Y) Board'a Kart Eklemek");
             Console.WriteLine("(S) Board'dan Kart Silmek");
             Console.WriteLine("(T) Kart Taşımak");
+            Console.WriteLine("(K) Kişi Listele");
             Console.WriteLine("(X) Çıkış");
             while (true)
             {
@@ -31,8 +32,11 @@ namespace ToDoProject
                     case "L":
                         okay.BoardListele();
                         break;
+                    case "K":
+                        okay.KisiListele();
+                        break;
                     case "Y":
-                        //KartEkle();
+                        okay.KartEkle();
                         break;
                     case "S":
                         //KartSil();
