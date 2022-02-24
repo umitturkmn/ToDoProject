@@ -133,6 +133,247 @@ namespace ToDoProject
             }
 
         }
+        public void KartSil()
+        {
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("*************-Kart Silme-*****************");
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("Öncelikle silmek istediğiniz kartı seçmeniz gerekiyor.");
+            bool kontrol = false;
+            string baslik = StringControl(" Lütfen kart başlığını yazınız: ");
+            foreach (Card item in TODO.ToArray())
+            {
+                if (baslik == item.Baslik)
+                {
+                    TODO.Remove(item);
+                    kontrol = true;
+                    Console.WriteLine("Durum: TODO");
+                    Console.WriteLine("Başlık: {0}",item.Baslik);
+                    Console.WriteLine("Açıklama: {0}",item.Icerik);
+                    Console.WriteLine("Atanan Kişi: {0}",item.AtananId);
+                    Console.WriteLine("Büyüklük: {0}",item.Boyut);                    
+                    Console.WriteLine("Kart Silinmiştir.");
+                    Console.WriteLine("*******************************************");
+                }
+            }
+            foreach (Card item in INPROGRESS.ToArray())
+            {
+                if (baslik == item.Baslik)
+                {
+                    INPROGRESS.Remove(item);
+                    kontrol = true;
+                    Console.WriteLine("Durum: INPROGRESS");
+                    Console.WriteLine("Başlık: {0}",item.Baslik);
+                    Console.WriteLine("Açıklama: {0}",item.Icerik);
+                    Console.WriteLine("Atanan Kişi: {0}",item.AtananId);
+                    Console.WriteLine("Büyüklük: {0}",item.Boyut);              
+                    Console.WriteLine("Kart Silinmiştir.");
+                    Console.WriteLine("*******************************************");
+                }
+            }
+            foreach (Card item in DONE.ToArray())
+            {
+                if (baslik == item.Baslik)
+                {
+                    DONE.Remove(item);
+                    kontrol = true;
+                    Console.WriteLine("Durum: DONE");
+                    Console.WriteLine("Başlık: {0}",item.Baslik);
+                    Console.WriteLine("Açıklama: {0}",item.Icerik);
+                    Console.WriteLine("Atanan Kişi: {0}",item.AtananId);
+                    Console.WriteLine("Büyüklük: {0}",item.Boyut);              
+                    Console.WriteLine("Kart Silinmiştir.");
+                    Console.WriteLine("*******************************************");
+                }
+            }
+            if (kontrol == false)
+            {
+                Console.WriteLine("Aradığınız krtiterlere uygun kart board'da bulunamadı. Lütfen bir seçim yapınız.");
+                Console.WriteLine("* Silmeyi sonlandırmak için : (1)");
+                Console.WriteLine("* Yeniden denemek için : (2)");
+                Console.WriteLine("Seçiminiz: ");
+                int secim = int.Parse(Console.ReadLine());
+                switch (secim)
+                {
+                    case 1:
+                        kontrol = true;
+                        break;
+                    case 2:
+                        KartSil();
+                        break;
+                    default:
+                        Console.WriteLine("Hatalı tuşladınız. Çıkış yapılıyor.");
+                        kontrol = true;
+                        break;
+                }
+            }
+        }
+        public void KartTasima()
+        {
+
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("*************-Kart Taşıma-*****************");
+            Console.WriteLine("*******************************************");
+            Console.WriteLine("Öncelikle taşımak istediğiniz kartı seçmeniz gerekiyor.");
+            string baslik = StringControl(" Lütfen kart başlığını yazınız: ");
+            string icerik = StringControl("Lütfen içeriğide giriniz: ");
+            bool kontrol = false;
+            foreach (Card item in TODO.ToArray())
+            {
+                if (baslik == item.Baslik & icerik == item.Icerik)
+                {
+                    Console.WriteLine("Durum: TODO");
+                    Console.WriteLine("Başlık: {0}",item.Baslik);
+                    Console.WriteLine("Açıklama: {0}",item.Icerik);
+                    Console.WriteLine("Atanan Kişi: {0}",item.AtananId);
+                    Console.WriteLine("Büyüklük: {0}",item.Boyut);                    
+                    Console.WriteLine("*******************************************");
+                    Console.WriteLine("Lutfen tasimak istediginiz Line'i secin:");
+                    Console.WriteLine("(1) TODO");
+                    Console.WriteLine("(2) IN PROGRESS");
+                    Console.WriteLine("(3) DONE");
+                    int secim = int.Parse(Console.ReadLine());
+                    switch (secim)
+                    {   
+                        case 1:
+                            Console.WriteLine("Kart zaten TODO'da...");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        case 2:
+                            INPROGRESS.Add(item);
+                            TODO.Remove(item);
+                            Console.WriteLine("Kartınız Taşınmıştır.");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        case 3:
+                            DONE.Add(item);
+                            TODO.Remove(item);
+                            Console.WriteLine("Kartınız Taşınmıştır.");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        default:
+                            Console.WriteLine("Hatalı tuşladınız.");
+                            kontrol = true;
+                            break;
+                    }
+
+                }
+            }
+            foreach (Card item in INPROGRESS.ToArray())
+            {
+                if (baslik == item.Baslik& icerik == item.Icerik)
+                {
+                    Console.WriteLine("Durum: INPROGRESS");
+                    Console.WriteLine("Başlık: {0}",item.Baslik);
+                    Console.WriteLine("Açıklama: {0}",item.Icerik);
+                    Console.WriteLine("Atanan Kişi: {0}",item.AtananId);
+                    Console.WriteLine("Büyüklük: {0}",item.Boyut);              
+                    Console.WriteLine("*******************************************");
+                    Console.WriteLine("Lutfen tasimak istediginiz Line'i secin:");
+                    Console.WriteLine("(1) TODO");
+                    Console.WriteLine("(2) IN PROGRESS");
+                    Console.WriteLine("(3) DONE");
+                    int secim = int.Parse(Console.ReadLine());
+                    switch (secim)
+                    {   
+                        case 1:
+                            TODO.Add(item);
+                            INPROGRESS.Remove(item);
+                            Console.WriteLine("Kartınız taşınmıştır.");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        case 2:
+                            Console.WriteLine("Kart zaten INPROGRESS'da...");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        case 3:
+                            DONE.Add(item);
+                            INPROGRESS.Remove(item);
+                            Console.WriteLine("Kartınız Taşınmıştır.");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        default:
+                            Console.WriteLine("Hatalı tuşladınız.");
+                            kontrol = true;
+                            break;
+                    }
+                }
+            }
+            foreach (Card item in DONE.ToArray())
+            {
+                if (baslik == item.Baslik& icerik == item.Icerik)
+                {
+                    Console.WriteLine("Durum: DONE");
+                    Console.WriteLine("Başlık: {0}",item.Baslik);
+                    Console.WriteLine("Açıklama: {0}",item.Icerik);
+                    Console.WriteLine("Atanan Kişi: {0}",item.AtananId);
+                    Console.WriteLine("Büyüklük: {0}",item.Boyut);              
+                    Console.WriteLine("*******************************************");
+                    Console.WriteLine("Lutfen tasimak istediginiz Line'i secin:");
+                    Console.WriteLine("(1) TODO");
+                    Console.WriteLine("(2) IN PROGRESS");
+                    Console.WriteLine("(3) DONE");
+                    int secim = int.Parse(Console.ReadLine());
+                    switch (secim)
+                    {   
+                        case 1:
+                            TODO.Add(item);
+                            DONE.Remove(item);
+                            Console.WriteLine("Kartınız Taşınmıştır.");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        case 2:
+                            INPROGRESS.Add(item);
+                            DONE.Remove(item);
+                            Console.WriteLine("Kartınız Taşınmıştır.");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        case 3:
+                            Console.WriteLine("Kart zaten DONE'da...");
+                            Console.WriteLine("*******************************************");
+                            kontrol = true;
+                            break;
+                        default:
+                            Console.WriteLine("Hatalı tuşladınız.");
+                            kontrol = true;
+                            break;
+                    }
+                }
+            }
+            if (kontrol == false)
+            {
+                Console.WriteLine("Aradığınız krtiterlere uygun kart board'da bulunamadı. Lütfen bir seçim yapınız.");
+                Console.WriteLine("* Taşımayı sonlandırmak için : (1)");
+                Console.WriteLine("* Yeniden denemek için : (2)");
+                Console.WriteLine("Seçiminiz: ");
+                int secim = int.Parse(Console.ReadLine());
+                switch (secim)
+                {
+                    case 1:
+                        kontrol = true;
+                        break;
+                    case 2:
+                        KartTasima();
+                        break;
+                    default:
+                        Console.WriteLine("Hatalı tuşladınız. Çıkış yapılıyor.");
+                        kontrol = true;
+                        break;
+                }
+            }
+
+
+
+
+        }
         public string StringControl(string text)
         {
             string str = "";

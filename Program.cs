@@ -39,10 +39,10 @@ namespace ToDoProject
                         okay.KartEkle();
                         break;
                     case "S":
-                        //KartSil();
+                        okay.KartSil();
                         break;
                     case "T":
-                        //KartTasima();
+                        okay.KartTasima();
                         break;
                     case "X":
                         Console.WriteLine("Çıkış yapılıyor. Hoşçakalın.");
